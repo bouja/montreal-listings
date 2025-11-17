@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Body global style */
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Headers */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Buttons hover effect */
+button:hover {
+  cursor: pointer;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
