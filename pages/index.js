@@ -15,7 +15,7 @@ export default function Home() {
         <title>Montreal Real Estate — Rentals & Homes for Sale</title>
         <meta
           name="description"
-          content="Discover curated rental apartments and homes for sale in Montreal. Affiliate deals included for best offers."
+          content="Discover curated rental apartments and homes for sale in Montreal. Find your perfect property with affiliate deals included."
         />
         <meta property="og:title" content="Montreal Real Estate Listings" />
         <meta
@@ -27,66 +27,77 @@ export default function Home() {
         <link rel="canonical" href="https://montreallistings.com" />
       </Head>
 
-      <header className="bg-white shadow px-6 py-6 text-center">
-        <h1 className="text-4xl font-bold mb-2">Montreal Real Estate</h1>
-        <p className="text-gray-700 text-lg">
-          Curated rental & buying offers across Montreal neighborhoods
-        </p>
+      {/* Header */}
+      <header className="bg-white shadow-md">
+        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+          <div className="flex items-center gap-3">
+            <Image src="/logo.png" alt="Montreal Listings Logo" width={50} height={50} />
+            <h1 className="text-2xl font-bold text-gray-800">Montreal Listings</h1>
+          </div>
+          <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
+            <a href="#featured" className="hover:text-blue-600 transition-colors">Featured</a>
+            <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
+          </nav>
+        </div>
       </header>
 
+      {/* Main Content */}
       <main className="max-w-6xl mx-auto py-10 px-4">
-        <section className="mb-12">
+        <section id="featured" className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Featured Properties</h2>
           <p className="text-gray-600 mb-6">
-            Explore selected properties updated weekly. Click to see the best deals.
+            Explore curated properties updated weekly. Click to view offers.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="border rounded-lg p-5 bg-white shadow-md hover:shadow-xl transition-shadow">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Property Card 1 */}
+            <div className="border rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden">
               <Image
                 src="/sample-montreal.jpg"
-                alt="2-Bed Apartment in Plateau Mont-Royal, Montreal"
+                alt="2-Bed Apartment in Plateau Mont-Royal"
                 width={500}
                 height={300}
-                className="rounded mb-3 object-cover"
+                className="object-cover w-full h-48"
               />
-              <h3 className="font-semibold text-lg mb-1">
-                2-Bed Apartment — Plateau Mont-Royal
-              </h3>
-              <p className="text-gray-600 mb-3">
-                $1,950/month · Near Laurier Metro
-              </p>
-              <button
-                onClick={() => redirectAffiliate('https://affiliate.example.com/offer1')}
-                className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-              >
-                View Offer
-              </button>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg mb-1">2-Bed Apartment — Plateau Mont-Royal</h3>
+                <p className="text-gray-600 mb-3">$1,950/month · Near Laurier Metro</p>
+                <button
+                  onClick={() => redirectAffiliate('https://affiliate.example.com/offer1')}
+                  className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                >
+                  View Offer
+                </button>
+              </div>
             </div>
 
-            <div className="border rounded-lg p-5 bg-white shadow-md hover:shadow-xl transition-shadow">
+            {/* Property Card 2 */}
+            <div className="border rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden">
               <Image
                 src="/sample-home.jpg"
                 alt="Condo in Griffintown, Montreal"
                 width={500}
                 height={300}
-                className="rounded mb-3 object-cover"
+                className="object-cover w-full h-48"
               />
-              <h3 className="font-semibold text-lg mb-1">Condo — Griffintown</h3>
-              <p className="text-gray-600 mb-3">$425,000 · Waterfront · Modern</p>
-              <button
-                onClick={() => redirectAffiliate('https://affiliate.example.com/offer2')}
-                className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-              >
-                Partner Link
-              </button>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg mb-1">Condo — Griffintown</h3>
+                <p className="text-gray-600 mb-3">$425,000 · Waterfront · Modern</p>
+                <button
+                  onClick={() => redirectAffiliate('https://affiliate.example.com/offer2')}
+                  className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                >
+                  Partner Link
+                </button>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-gray-100 text-center py-6 text-sm text-gray-600">
-        © {new Date().getFullYear()} MontrealListings.com — Affiliate links included.
+      {/* Footer */}
+      <footer id="contact" className="bg-gray-100 py-6 mt-12 text-center text-gray-600">
+        <p>© {new Date().getFullYear()} MontrealListings.com — Affiliate links included.</p>
       </footer>
     </div>
   );
