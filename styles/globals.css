@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Body global style */
+/* Body style */
 body {
   background-color: #f9fafb;
   color: #111827;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Headers */
@@ -22,4 +23,10 @@ button:hover {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Cards hover effect */
+.shadow-md:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
